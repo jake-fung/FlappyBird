@@ -10,7 +10,7 @@ public class HighScoreUI : MonoBehaviour
     private void Start()
     {
         SetText();
-        BirdGameManager.instance.OnHighScoreChanged += HighScore_OnHighScoreChanged;
+        BirdGameManager.Instance.OnHighScoreChanged += HighScore_OnHighScoreChanged;
     }
 
     private void HighScore_OnHighScoreChanged(object sender, System.EventArgs e)

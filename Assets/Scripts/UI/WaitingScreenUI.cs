@@ -12,12 +12,12 @@ public class WaitingScreen : MonoBehaviour
 
     private void Start()
     {
-        BirdGameManager.instance.OnStateChanged += BirdGameManager_OnStateChanged;
+        BirdGameManager.Instance.OnStateChanged += BirdGameManager_OnStateChanged;
     }
 
     private void BirdGameManager_OnStateChanged(object sender, System.EventArgs e)
     {
-        if (BirdGameManager.instance.IsPlaying())
+        if (BirdGameManager.Instance.IsPlaying())
         {
             Hide();
         }

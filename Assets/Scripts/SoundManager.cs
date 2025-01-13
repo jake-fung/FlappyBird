@@ -11,15 +11,15 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnFlap += PlayFlapSound;
-        BirdGameManager.instance.OnStateChanged += PlayGameOverSound;
-        BirdGameManager.instance.OnBirdScored += PlayScoreSound;
-        BirdGameManager.instance.OnBirdBonusScored += PlayBonusScoreSound;
-        BirdGameManager.instance.OnHighScoreChanged += PlayHighScoreSound;
+        BirdGameManager.Instance.OnStateChanged += PlayGameOverSound;
+        BirdGameManager.Instance.OnBirdScored += PlayScoreSound;
+        BirdGameManager.Instance.OnBirdBonusScored += PlayBonusScoreSound;
+        BirdGameManager.Instance.OnHighScoreChanged += PlayHighScoreSound;
     }
 
     private void PlayFlapSound(object sender, System.EventArgs e)
     {
-        if (BirdGameManager.instance.GetBirdIsAlive())
+        if (BirdGameManager.Instance.GetBirdIsAlive())
         {
             flapSound.Play();
         }
@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
 
     private void PlayGameOverSound(object sender, System.EventArgs e)
     {
-        if (BirdGameManager.instance.IsGameOver())
+        if (BirdGameManager.Instance.IsGameOver())
         {
             gameOverSound.Play();
         }

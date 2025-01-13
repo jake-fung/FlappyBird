@@ -13,7 +13,7 @@ public class GameOverScreen : MonoBehaviour
     {
         restartButton.onClick.AddListener(() =>
         {
-            BirdGameManager.instance.RestartGame();
+            BirdGameManager.Instance.RestartGame();
         });
         quitButton.onClick.AddListener(() =>
         {
@@ -24,8 +24,8 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
-        BirdGameManager.instance.OnStateChanged += GameOverScreen_OnStateChanged;
-        BirdGameManager.instance.OnHighScoreChanged += GameOverScreen_OnHighScoreChanged;
+        BirdGameManager.Instance.OnStateChanged += GameOverScreen_OnStateChanged;
+        BirdGameManager.Instance.OnHighScoreChanged += GameOverScreen_OnHighScoreChanged;
     }
 
     private void GameOverScreen_OnHighScoreChanged(object sender, System.EventArgs e)
@@ -35,20 +35,20 @@ public class GameOverScreen : MonoBehaviour
 
     private void GameOverScreen_OnStateChanged(object sender, System.EventArgs e)
     {
-        if (BirdGameManager.instance.IsGameOver())
+        if (BirdGameManager.Instance.IsGameOver())
         {
             Show();
         }
     }
 
-    public void Show()
+    private void Show()
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
     }
 
-    public void Hide()
+    private void Hide()
     {
         gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);

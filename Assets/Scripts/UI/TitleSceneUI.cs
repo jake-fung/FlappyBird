@@ -13,10 +13,7 @@ public class TitleSceneUI : MonoBehaviour
             // Click code
             Loader.Load(Loader.Scene.GameScene);
         });
-        quitButton.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
+        quitButton.onClick.AddListener(Application.Quit);
 
         Time.timeScale = 1f;
     }

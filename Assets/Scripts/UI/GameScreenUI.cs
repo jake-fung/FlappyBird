@@ -14,9 +14,9 @@ public class GameScreenUI : MonoBehaviour
 
     private void Start()
     {
-        BirdGameManager.instance.OnStateChanged += GameScreen_OnStateChanged;
-        BirdGameManager.instance.OnBirdScored += GameScreen_OnBirdScored;
-        BirdGameManager.instance.OnBirdBonusScored += GameScreen_OnBirdBonusScored;
+        BirdGameManager.Instance.OnStateChanged += GameScreen_OnStateChanged;
+        BirdGameManager.Instance.OnBirdScored += GameScreen_OnBirdScored;
+        BirdGameManager.Instance.OnBirdBonusScored += GameScreen_OnBirdBonusScored;
     }
 
     private void GameScreen_OnBirdBonusScored(object sender, System.EventArgs e)
@@ -31,12 +31,12 @@ public class GameScreenUI : MonoBehaviour
 
     private void SetScoreText()
     {
-        scoreText.text = BirdGameManager.instance.GetScore().ToString();
+        scoreText.text = BirdGameManager.Instance.GetScore().ToString();
     }
 
     private void GameScreen_OnStateChanged(object sender, System.EventArgs e)
     {
-        if (BirdGameManager.instance.IsPlaying() || BirdGameManager.instance.IsGameOver())
+        if (BirdGameManager.Instance.IsPlaying() || BirdGameManager.Instance.IsGameOver())
         {
             Show();
         }

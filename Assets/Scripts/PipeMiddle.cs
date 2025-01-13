@@ -6,7 +6,7 @@ public class PipeMiddle : MonoBehaviour
 
     private void Start()
     {
-        birdGameManager = BirdGameManager.instance;
+        birdGameManager = BirdGameManager.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

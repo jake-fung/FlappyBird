@@ -20,29 +20,29 @@ public class PipeSpawner : MonoBehaviour
         {
             spawnRate = Random.Range(spawnTimeLowerBound, spawnTimeUpperBound);
             timer = 0;
-            spawnGeneralPipe();
+            SpawnGeneralPipe();
         }
     }
 
-    private void spawnGeneralPipe()
+    private void SpawnGeneralPipe()
     {
         if (Random.Range(0, 9) == 0)
         {
-            spawnBonusPipe();
+            SpawnBonusPipe();
         }
         else
         {
-            spawnPipe();
+            SpawnPipe();
         }
     }
 
-    private void spawnPipe()
+    private void SpawnPipe()
     {
         float height = transform.position.y + Random.Range(-heightOffset, heightOffset);
         Instantiate(pipePrefab, new Vector3(transform.position.x, height, 0), transform.rotation);
     }
 
-    private void spawnBonusPipe()
+    private void SpawnBonusPipe()
     {
         float height = transform.position.y + Random.Range(-heightOffset, heightOffset);
         Instantiate(bonusPipePrefab, new Vector3(transform.position.x, height, 0), transform.rotation);

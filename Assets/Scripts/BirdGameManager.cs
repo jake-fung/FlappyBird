@@ -15,7 +15,7 @@ public class BirdGameManager : MonoBehaviour
     }
 
     private State state;
-    public static BirdGameManager instance { get; private set; }
+    public static BirdGameManager Instance { get; private set; }
     public event EventHandler OnStateChanged;
     public event EventHandler OnBirdDeath;
     public event EventHandler OnBirdBonusScored;
@@ -27,7 +27,7 @@ public class BirdGameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -38,12 +38,10 @@ public class BirdGameManager : MonoBehaviour
 
     private void BirdGameManager_OnInteract(object sender, EventArgs e)
     {
-        if (state == State.WaitingToStart)
-        {
-            Time.timeScale = 1;
-            state = State.Playing;
-            OnStateChanged?.Invoke(this, EventArgs.Empty);
-        }
+        if (state != State.WaitingToStart) return;
+        Time.timeScale = 1;
+        state = State.Playing;
+        OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 
     private void Update()
@@ -65,6 +63,8 @@ public class BirdGameManager : MonoBehaviour
                 birdIsAlive = false;
                 OnBirdDeath?.Invoke(this, EventArgs.Empty);
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
@@ -117,11 +117,6 @@ public class BirdGameManager : MonoBehaviour
     public bool IsGameOver()
     {
         return state == State.GameOver;
-    }
-
-    public bool IsWaitingToStart()
-    {
-        return state == State.WaitingToStart;
     }
 
     public bool IsPlaying()

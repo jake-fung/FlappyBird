@@ -26,7 +26,7 @@ public class BonusPipe : Pipe
     }
 
     // Update is called once per frame
-    new private void Update()
+    private new void Update()
     {
         base.Update();
         if (direction == Direction.Up)
@@ -73,26 +73,16 @@ public class BonusPipe : Pipe
 
     private void MoveUp()
     {
-        if (transform.position.y >= 7.5)
-        {
-            transform.position += (Vector3.up * 0) * Time.deltaTime;
-        }
-        else
-        {
-            transform.position += (Vector3.up * pipeVertivalMoveSpeed) * Time.deltaTime;
-        }
+        transform.position += transform.position.y >= 7.5
+            ? Vector3.up * (0 * Time.deltaTime)
+            : Vector3.up * (pipeVertivalMoveSpeed * Time.deltaTime);
     }
 
     private void MoveDown()
     {
-        if (transform.position.y <= -7.5)
-        {
-            transform.position += (Vector3.down * 0) * Time.deltaTime;
-        }
-        else
-        {
-            transform.position += (Vector3.down * pipeVertivalMoveSpeed) * Time.deltaTime;
-        }
+        transform.position += transform.position.y <= -7.5
+            ? Vector3.down * (0 * Time.deltaTime)
+            : Vector3.down * (pipeVertivalMoveSpeed * Time.deltaTime);
     }
 
     private void ResetTimerRandomizeSpeedAndInterval()

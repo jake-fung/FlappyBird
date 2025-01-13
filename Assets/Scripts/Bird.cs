@@ -16,7 +16,7 @@ public class Bird : MonoBehaviour
 
     private void GameInput_OnFlap(object sender, EventArgs e)
     {
-        if (BirdGameManager.instance.GetBirdIsAlive())
+        if (BirdGameManager.Instance.GetBirdIsAlive())
         {
             bird.linearVelocity = new Vector2(0, flapStrength);
         }
@@ -25,7 +25,7 @@ public class Bird : MonoBehaviour
     private void Update()
     {
         CheckBirdGoesOutOfBound();
-        if (BirdGameManager.instance.GetBirdIsAlive())
+        if (BirdGameManager.Instance.GetBirdIsAlive())
         {
             if (bird.linearVelocity.y > 0)
             {
@@ -41,17 +41,17 @@ public class Bird : MonoBehaviour
 
     private void CheckBirdGoesOutOfBound()
     {
-        if ((transform.position.y < -26 || transform.position.y > 26) && BirdGameManager.instance.GetBirdIsAlive())
+        if ((transform.position.y < -26 || transform.position.y > 26) && BirdGameManager.Instance.GetBirdIsAlive())
         {
-            BirdGameManager.instance.GameOver();
+            BirdGameManager.Instance.GameOver();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (BirdGameManager.instance.GetBirdIsAlive())
+        if (BirdGameManager.Instance.GetBirdIsAlive())
         {
-            BirdGameManager.instance.GameOver();
+            BirdGameManager.Instance.GameOver();
         }
     }
 }

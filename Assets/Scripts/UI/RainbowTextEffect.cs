@@ -21,13 +21,13 @@ public class RainbowTextEffect : MonoBehaviour
 
     private int currentTextSize;
 
-    void Awake()
+    private void Awake()
     {
         m_TextComponent = GetComponent<TMP_Text>();
     }
 
 
-    void Start()
+    private void Start()
     {
         currentTextSize = m_TextComponent.text.Length;
         StartCoroutine(AnimateVertexColors());

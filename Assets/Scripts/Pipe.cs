@@ -10,7 +10,7 @@ public class Pipe : MonoBehaviour
     protected void Update()
     {
 
-        transform.position += Vector3.left * pipeHorizontalMoveSpeed * Time.deltaTime;
+        transform.position += Vector3.left * (pipeHorizontalMoveSpeed * Time.deltaTime);
         timer += Time.deltaTime;
 
         if (transform.position.x < destroyXPos)

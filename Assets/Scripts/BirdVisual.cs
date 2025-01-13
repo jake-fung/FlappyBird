@@ -12,7 +12,7 @@ public class BirdVisual : MonoBehaviour
     {
         bird.OnBirdGoingUp += BirdVisualScript_OnBirdGoingUp;
         bird.OnBirdGoingDown += BirdVisualScript_OnBirdGoingDown;
-        BirdGameManager.instance.OnBirdDeath += BirdVisualScript_OnBirdDeath;
+        BirdGameManager.Instance.OnBirdDeath += BirdVisualScript_OnBirdDeath;
     }
 
 
