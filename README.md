@@ -1,18 +1,10 @@
-# FLAPPY BIRD
+# FLAP FLAP BIRD
 
 ### This is a clone of the popular mobile game Flappy Bird created using the Unity game engine. The game features similar mechanics and gameplay to the original, including a bird that flaps its wings to stay afloat, green pipes that the player must navigate through, and a scoring system that tracks the player's progress. The game also includes sound effects, animations, and UI elements to enhance the player's experience.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Gameplay](#gameplay)
-- [Game Mechanics](#game-mechanics)
-- [Credits](#credits)
-
 ## Overview
 
-### Flappy Bird is a popular mobile game where the player controls a bird, attempting to fly between columns of green pipes without hitting them. The game is known for its difficulty and simple, yet addictive gameplay. The objective is to navigate the bird through as many pipes as possible to achieve a high score.
+### Flap Flap Bird is a popular mobile game where the player controls a bird, attempting to fly between columns of green pipes without hitting them. The game is known for its difficulty and simple, yet addictive gameplay. The objective is to navigate the bird through as many pipes as possible to achieve a high score.
 
 ## Installation
 
